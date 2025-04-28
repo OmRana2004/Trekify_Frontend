@@ -1,6 +1,6 @@
 import { Trek } from "../types/Trek";
 import Kedartal from "../assets/KedarTal.jpg";
-impport Sattal from "../assets/SatTal.webp";
+import Sattal from "../assets/SatTal.webp";
 import Brahmatal from "../assets/Brahmatal.png";
 import KedartalImage1 from "../assets/KedarTal-1.jpg";
 import KedartalImage2 from "../assets/KedarTal-2.webp";
