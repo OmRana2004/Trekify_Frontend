@@ -6,9 +6,10 @@ import KedartalImage1 from "../assets/KedarTal-1.jpg";
 import KedartalImage2 from "../assets/KedarTal-2.webp";
 import KedartalImage3 from "../assets/KedarTal-3.jpg";
 import KedartalImage4 from "../assets/KedarTal-4.jpg";
-import BudhaKedarImage1 from "../assets/budha-kedar-1.jpg";
-import BudhaKedarImage2 from "../assets/budha-kedar-2.jpg";
-import BudhaKedarImage3 from "../assets/budha-kedar-3.jpg";
+import SattalImage1 from "../assets/SatTal-1.jpg";
+import SattalImage2 from "../assets/SatTal-2.webp";
+import SattalImage3 from "../assets/SatTal-3.jpg";
+import SattalImage4 from "../assets/SatTal-4.jpeg";
 import BrahmatalImage1 from "../assets/brahmatal-1.jpg";
 import BrahmatalImage2 from "../assets/brahmatal-2.jpg";
 import BrahmatalImage3 from "../assets/brahmatal-3.jpg";
@@ -89,9 +90,10 @@ export const treks: Trek[] = [
       "Headlamp"
     ],
     gallery: [
-      BudhaKedarImage1,
-      BudhaKedarImage2,
-      BudhaKedarImage3
+      SattalImage1,
+      SattalImage2,
+      SattalImage3,
+      SattalImage4,
     ],
     itineraryPdf: "/pdfs/budha-kedar-itinerary.pdf" // 🔥 added here
   },
