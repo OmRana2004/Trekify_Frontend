@@ -1,130 +1,141 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { treks } from "../data/treks";
 
 const TrekDetail = () => {
-  const { id } = useParams();
-  const trek = treks.find((t) => t.id === id);
+  const { id } = useParams<{ id: string }>();
+  const trek = treks.find((trek) => trek.id === id);
 
   if (!trek) {
-    return <div className="p-6 text-center text-red-600">Trek not found</div>;
+    return (
+      <div className="text-center py-20">
+        <h2 className="text-3xl font-bold text-gray-800">Trek Not Found</h2>
+        <p className="text-gray-600 mt-4">Please check the trek you are trying to view.</p>
+      </div>
+    );
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-10 space-y-12">
-      {/* Hero Image */}
-      <img
-        src={trek.image}
-        alt={trek.name}
-        className="rounded-2xl w-full h-[400px] object-cover shadow-lg mb-8"
-        data-aos="fade-up"
-      />
+    <div className="max-w-6xl mx-auto px-4 py-10">
+      {/* Trek Banner */}
+      <div data-aos="fade-up" className="relative w-full h-[350px] md:h-[450px] rounded-lg overflow-hidden shadow-lg">
+        <img
+          src={trek.image}
+          alt={trek.name}
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+      </div>
 
       {/* Trek Info */}
-      <div className="space-y-4" data-aos="fade-up" data-aos-delay="100">
-        <h1 className="text-4xl font-bold text-gray-800">{trek.name}</h1>
-        <p className="text-xl text-gray-600">{trek.location}</p>
-        <div className="grid grid-cols-2 gap-6 text-sm text-gray-700 mt-6">
-          <p><strong>Duration:</strong> {trek.duration}</p>
-          <p><strong>Difficulty:</strong> {trek.difficulty}</p>
-          <p><strong>Season:</strong> {trek.season}</p>
-          <p><strong>Price:</strong> ₹{trek.price}</p>
-        </div>
-        <p className="mt-4 text-lg text-gray-800">{trek.description}</p>
+      <div className="mt-8 space-y-6">
+        <h1 data-aos="fade-up" className="text-4xl font-bold text-gray-900">{trek.name}</h1>
+        <p data-aos="fade-up" data-aos-delay="100" className="text-lg text-gray-700">
+          {trek.location} • {trek.difficulty} • {trek.duration} • {trek.season}
+        </p>
+        <p data-aos="fade-up" data-aos-delay="200" className="text-2xl font-semibold text-green-600">
+          ₹{trek.price}
+        </p>
+        <p data-aos="fade-up" data-aos-delay="300" className="text-gray-800">{trek.description}</p>
+
+        {/* Download Itinerary PDF Button */}
+        {trek.itineraryPdf && (
+          <div data-aos="fade-up" data-aos-delay="400">
+            <a
+              href={trek.itineraryPdf}
+              download={`${trek.name}-Itinerary.pdf`}
+              className="inline-flex items-center mt-6 px-6 py-3 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-md shadow-md hover:bg-green-700 transition-all duration-300"
+            >
+              📄 Download Itinerary PDF
+            </a>
+          </div>
+        )}
       </div>
 
       {/* Itinerary */}
-      {Array.isArray(trek.itinerary) && trek.itinerary.length > 0 && (
-        <div data-aos="fade-up" data-aos-delay="200">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">Itinerary</h2>
-          <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
-            {trek.itinerary.map((step, i) => (
-              <li key={i} className="pl-4">{step}</li>
+      {trek.itinerary && trek.itinerary.length > 0 && (
+        <div className="mt-12">
+          <h2 data-aos="fade-up" className="text-3xl font-extrabold text-gray-900 mb-4">Itinerary</h2>
+          <ul className="list-disc list-inside space-y-2">
+            {trek.itinerary.map((item, index) => (
+              <li
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+                key={index}
+                className="text-lg font-semibold text-gray-700"
+              >
+                {item}
+              </li>
             ))}
           </ul>
         </div>
       )}
 
       {/* Inclusions */}
-      {Array.isArray(trek.inclusions) && trek.inclusions.length > 0 && (
-        <div data-aos="fade-up" data-aos-delay="250">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">What's Included</h2>
-          <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
-            {trek.inclusions.map((item, i) => (
-              <li key={i} className="pl-4">{item}</li>
+      {trek.inclusions && trek.inclusions.length > 0 && (
+        <div className="mt-12">
+          <h2 data-aos="fade-up" className="text-3xl font-extrabold text-gray-900 mb-4">Inclusions</h2>
+          <ul className="list-disc list-inside space-y-2">
+            {trek.inclusions.map((item, index) => (
+              <li
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+                key={index}
+                className="text-lg font-semibold text-gray-700"
+              >
+                {item}
+              </li>
             ))}
           </ul>
         </div>
       )}
 
       {/* Gear List */}
-      {Array.isArray(trek.gearList) && trek.gearList.length > 0 && (
-        <div data-aos="fade-up" data-aos-delay="300">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-4">Gear Checklist</h2>
-          <ul className="list-disc list-inside text-lg text-gray-700 space-y-2">
-            {trek.gearList.map((gear, i) => (
-              <li key={i} className="pl-4">{gear}</li>
+      {trek.gearList && trek.gearList.length > 0 && (
+        <div className="mt-12">
+          <h2 data-aos="fade-up" className="text-3xl font-extrabold text-gray-900 mb-4">Gear List</h2>
+          <ul className="list-disc list-inside space-y-2">
+            {trek.gearList.map((item, index) => (
+              <li
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+                key={index}
+                className="text-lg font-semibold text-gray-700"
+              >
+                {item}
+              </li>
             ))}
           </ul>
         </div>
       )}
 
       {/* Gallery */}
-      {Array.isArray(trek.gallery) && trek.gallery.length > 0 && (
-        <div data-aos="fade-up" data-aos-delay="350">
-          <h2 className="text-2xl font-semibold text-gray-800 mb-6">Trek Gallery</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {trek.gallery.map((img, i) => (
-              <img
-                key={i}
-                src={img}
-                alt={`Trek Image ${i + 1}`}
-                className="rounded-lg object-cover h-60 w-full shadow-md hover:scale-105 transition-all duration-300"
-              />
+      {trek.gallery && trek.gallery.length > 0 && (
+        <div className="mt-12">
+          <h2 data-aos="fade-up" className="text-3xl font-extrabold text-gray-900 mb-6">Gallery</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {trek.gallery.map((image, index) => (
+              <div key={index} data-aos="fade-up" data-aos-delay={index * 100}>
+                <img
+                  src={image}
+                  alt={`Gallery ${index + 1}`}
+                  className="w-full h-60 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300"
+                />
+              </div>
             ))}
           </div>
         </div>
       )}
 
-      {/* Enquiry Form */}
+      {/* Floating Book Now Button (Mobile only) */}
       <div
-        className="bg-gray-50 p-8 rounded-xl shadow-xl"
         data-aos="fade-up"
-        data-aos-delay="400"
+        className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 md:hidden"
       >
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Enquire / Book this Trek</h2>
-        <form className="space-y-6">
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="w-full p-4 border border-gray-300 rounded-md text-lg"
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="w-full p-4 border border-gray-300 rounded-md text-lg"
-          />
-          <textarea
-            placeholder="Your Message"
-            rows={4}
-            className="w-full p-4 border border-gray-300 rounded-md text-lg"
-          />
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-all duration-200"
-          >
-            Send Enquiry
-          </button>
-        </form>
-      </div>
-
-      {/* Back to Explore Treks Link */}
-      <div className="text-center mt-8">
-        <Link
-          to="/explore"  // Ensure this path matches the Explore page route in your AppRoutes.tsx
-          className="text-lg text-blue-600 hover:underline"
+        <a
+          href="#contact-form"
+          className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-lg font-bold rounded-full shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300"
         >
-          &larr; Back to Explore Treks
-        </Link>
+          🚀 Book This Trek
+        </a>
       </div>
     </div>
   );

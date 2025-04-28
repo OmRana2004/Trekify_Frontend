@@ -14,4 +14,6 @@ export interface Trek {
   inclusions?: string[];
   gearList?: string[];
   gallery?: string[];
+  itineraryPdf?: string;
+
 }

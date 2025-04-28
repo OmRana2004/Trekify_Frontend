@@ -1,40 +1,47 @@
 import { Trek } from "../types/Trek";
-import Kedarnath from "../assets/Kedarnath.png";
-import BudhaKedar from "../assets/BudhaKedar.png";
+import Kedartal from "../assets/KedarTal.jpg";
+impport Sattal from "../assets/SatTal.webp";
 import Brahmatal from "../assets/Brahmatal.png";
-import KedarkanthaImage1 from "../assets/kedarkantha-1.jpg";
-import KedarkanthaImage2 from "../assets/kedarkantha-2.jpg";
-import KedarkanthaImage3 from "../assets/kedarkantha-3.jpg";
+import KedartalImage1 from "../assets/KedarTal-1.jpg";
+import KedartalImage2 from "../assets/KedarTal-2.webp";
+import KedartalImage3 from "../assets/KedarTal-3.jpg";
+import KedartalImage4 from "../assets/KedarTal-4.jpg";
 import BudhaKedarImage1 from "../assets/budha-kedar-1.jpg";
 import BudhaKedarImage2 from "../assets/budha-kedar-2.jpg";
 import BudhaKedarImage3 from "../assets/budha-kedar-3.jpg";
 import BrahmatalImage1 from "../assets/brahmatal-1.jpg";
 import BrahmatalImage2 from "../assets/brahmatal-2.jpg";
 import BrahmatalImage3 from "../assets/brahmatal-3.jpg";
+// Import PDFs
+import KedarTalItinerary from "../assets/kedartal-itinerary.pdf";
 
 export const treks: Trek[] = [
   {
-    id: "kedarkantha",
-    name: "Kedarkantha Trek",
+    id: "KEDARTAL",
+    name: "KEDARTAL TREK",
     location: "Uttarakhand",
     difficulty: "Moderate",
-    duration: "6 Days",
-    price: 8500,
-    image: Kedarnath,
+    duration: "8 Days",
+    price: 17500,
+    image: Kedartal,
     season: "Winter",
-    description: "A scenic winter trek with snow-capped peaks and beautiful campsites.",
+    description: "Kedartal is a high-altitude trek from Gangotri, reaching 4,650 meters over 17 km. Physically and mentally demanding, it offers stunning views of Thalay Sagar, Jogin massif, Bhrigupanth, and Manda. Spread across 5 days, it's best suited for experienced trekkers.",
     itinerary: [
-      "Day 1: Drive from Dehradun to Sankri",
-      "Day 2: Trek from Sankri to Juda Ka Talab",
-      "Day 3: Trek to Kedarkantha Base Camp",
-      "Day 4: Summit Kedarkantha Peak and return to Base Camp",
-      "Day 5: Return trek to Sankri",
-      "Day 6: Drive back to Dehradun"
+      "Day 1 :Arrival at Gangotri 3000m",
+      "Day 2 :Acclimatization Day at Gangotri",
+      "Day 3 :GANGOTRI TO BHOJ KHARK (5 to 6hr)",
+      "Day 4 :BHOJ KHARAK TO KEDARKHARAK (4 to 5hr)",
+      "Day 5 :KEDAR KHARAK TO KEDAR TAAL (4 to 5hr )",
+      "Day 6 :KEDAR TAAL TO BHOJ KHARAK (5 to 6hrs)",
+      "Day 7 :BHOJKHARAK TO GANGOTRI (6 to 7hrs)",
+      "Day 8 :GANGOTRI TO DEHRADUN (9-11hrs)"
     ],
     inclusions: [
-      "All meals during trek",
-      "Tent and sleeping bag",
-      "Certified trek guide",
+      "All meals Gangotri to Gangotri",
+      "services of a cook and kitchen staff",
+      "Sleeping bag tents Mattresses Kichen tent Dining tent toilet tent",
+      "porters carrying common trek equipment",
+      "services of experienced trek leader",
       "Forest entry fees"
     ],
     gearList: [
@@ -45,27 +52,28 @@ export const treks: Trek[] = [
       "Sunglasses and sunscreen"
     ],
     gallery: [
-      KedarkanthaImage1,
-      KedarkanthaImage2,
-      KedarkanthaImage3
-    ]
+      KedartalImage1,
+      KedartalImage2,
+      KedartalImage3,
+      KedartalImage4
+    ],
+    itineraryPdf: KedarTalItinerary,
   },
   {
-    id: "budha-kedar",
-    name: "Budha Kedar Trek",
+    id: "SATTAL",
+    name: "SATTAL TREK",
     location: "Uttarakhand",
-    difficulty: "Hard",
-    duration: "5 Days",
-    price: 9800,
-    image: BudhaKedar,
-    season: "Summer",
-    description: "A dramatic crossover trek from lush valleys to desert landscapes.",
+    difficulty: "Easy",
+    duration: "3 Nights 4 Days",
+    price: 8000,
+    image: Sattal,
+    season: "All Year",
+    description: "The Sattal Trek offers a perfect blend of natural beauty and cultural experience in Uttarakhand. Starting from the charming village of Dharali, known for its ancient temples and traditions, the trail winds through scenic landscapes and glimpses of local life.",
     itinerary: [
-      "Day 1: Arrival and acclimatization",
-      "Day 2: Trek through dense forests to first camp",
-      "Day 3: High-altitude climb to Budha Kedar ridge",
-      "Day 4: Explore summit and descend to lower camp",
-      "Day 5: Return trek and departure"
+      "Day 1: Pickup to you from UTTARKASHI Drive to Dharali l  - 70 km (2/3 Hours) (2650 Meter) overnight stay Hotel",
+      "Day 2: Dharali to sattal trek back to DHARALI",
+      "Day 3: Explore full day harshil valley mukhba Village enjoy your holiday here - this is a small heaven in the earth - this is best Please near Ganga River",
+      "Day 4: After breakfast drive to Dharali via Uttarkash - (72 km). 2/3Hours) reach afternoon",
     ],
     inclusions: [
       "Meals and snacks",
@@ -84,7 +92,8 @@ export const treks: Trek[] = [
       BudhaKedarImage1,
       BudhaKedarImage2,
       BudhaKedarImage3
-    ]
+    ],
+    itineraryPdf: "/pdfs/budha-kedar-itinerary.pdf" // 🔥 added here
   },
   {
     id: "brahmatal",
@@ -121,6 +130,7 @@ export const treks: Trek[] = [
       BrahmatalImage1,
       BrahmatalImage2,
       BrahmatalImage3
-    ]
+    ],
+    itineraryPdf: "/pdfs/brahmatal-itinerary.pdf" // 🔥 added here
   }
 ];
