@@ -15,6 +15,7 @@ import BrahmatalImage2 from "../assets/brahmatal-2.jpg";
 import BrahmatalImage3 from "../assets/brahmatal-3.jpg";
 // Import PDFs
 import KedarTalItinerary from "../assets/kedartal-itinerary.pdf";
+import SatTalItinarary from "../assets/Sattal-Itinerary.pdf";
 
 export const treks: Trek[] = [
   {
@@ -95,7 +96,7 @@ export const treks: Trek[] = [
       SattalImage3,
       SattalImage4,
     ],
-    itineraryPdf: "/pdfs/budha-kedar-itinerary.pdf" // 🔥 added here
+    itineraryPdf: SatTalItinarary,
   },
   {
     id: "brahmatal",

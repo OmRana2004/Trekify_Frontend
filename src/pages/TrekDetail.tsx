@@ -1,9 +1,12 @@
 import { useParams } from "react-router-dom";
 import { treks } from "../data/treks";
+import { useState } from "react";
+import BookingModal from "../components/BookingModal";
 
 const TrekDetail = () => {
   const { id } = useParams<{ id: string }>();
   const trek = treks.find((trek) => trek.id === id);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
 
   if (!trek) {
     return (
@@ -51,15 +54,15 @@ const TrekDetail = () => {
       </div>
 
       {/* Itinerary */}
-      {trek.itinerary && trek.itinerary.length > 0 && (
+      {trek.itinerary?.length ? (
         <div className="mt-12">
           <h2 data-aos="fade-up" className="text-3xl font-extrabold text-gray-900 mb-4">Itinerary</h2>
           <ul className="list-disc list-inside space-y-2">
             {trek.itinerary.map((item, index) => (
               <li
+                key={index}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
-                key={index}
                 className="text-lg font-semibold text-gray-700"
               >
                 {item}
@@ -67,18 +70,18 @@ const TrekDetail = () => {
             ))}
           </ul>
         </div>
-      )}
+      ) : null}
 
       {/* Inclusions */}
-      {trek.inclusions && trek.inclusions.length > 0 && (
+      {trek.inclusions?.length ? (
         <div className="mt-12">
           <h2 data-aos="fade-up" className="text-3xl font-extrabold text-gray-900 mb-4">Inclusions</h2>
           <ul className="list-disc list-inside space-y-2">
             {trek.inclusions.map((item, index) => (
               <li
+                key={index}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
-                key={index}
                 className="text-lg font-semibold text-gray-700"
               >
                 {item}
@@ -86,18 +89,18 @@ const TrekDetail = () => {
             ))}
           </ul>
         </div>
-      )}
+      ) : null}
 
       {/* Gear List */}
-      {trek.gearList && trek.gearList.length > 0 && (
+      {trek.gearList?.length ? (
         <div className="mt-12">
           <h2 data-aos="fade-up" className="text-3xl font-extrabold text-gray-900 mb-4">Gear List</h2>
           <ul className="list-disc list-inside space-y-2">
             {trek.gearList.map((item, index) => (
               <li
+                key={index}
                 data-aos="fade-up"
                 data-aos-delay={index * 100}
-                key={index}
                 className="text-lg font-semibold text-gray-700"
               >
                 {item}
@@ -105,10 +108,10 @@ const TrekDetail = () => {
             ))}
           </ul>
         </div>
-      )}
+      ) : null}
 
       {/* Gallery */}
-      {trek.gallery && trek.gallery.length > 0 && (
+      {trek.gallery?.length ? (
         <div className="mt-12">
           <h2 data-aos="fade-up" className="text-3xl font-extrabold text-gray-900 mb-6">Gallery</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -123,20 +126,39 @@ const TrekDetail = () => {
             ))}
           </div>
         </div>
-      )}
+      ) : null}
 
-      {/* Floating Book Now Button (Mobile only) */}
-      <div
-        data-aos="fade-up"
-        className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 md:hidden"
-      >
-        <a
-          href="#contact-form"
-          className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-lg font-bold rounded-full shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300"
-        >
-          🚀 Book This Trek
-        </a>
-      </div>
+{/* Desktop Book Now Button */}
+<div className="justify-center mt-8 md:flex hidden">
+  <button
+    onClick={() => setIsBookingOpen(true)}
+    className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-lg font-bold rounded-full shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300"
+  >
+    🚀 Book This Trek
+  </button>
+</div>
+
+{/* Mobile Floating Book Button */}
+<div
+  data-aos="fade-up"
+  className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 md:hidden"
+>
+  <button
+    onClick={() => setIsBookingOpen(true)}
+    className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-lg font-bold rounded-full shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300"
+  >
+     🎒Book This Trek
+  </button>
+</div>
+
+
+      {/* Modal */}
+      {isBookingOpen && (
+        <BookingModal
+          onClose={() => setIsBookingOpen(false)}
+          trekName={trek.name}
+        />
+      )}
     </div>
   );
 };
