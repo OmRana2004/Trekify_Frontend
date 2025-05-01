@@ -1,6 +1,6 @@
 import { useState } from "react";
 import founderImage from "../assets/founder.jpg";
-import creatorImage from "../assets/creator.png";
+import creatorImage from "../assets/creator.jpg";
 
 const About = () => {
   const [founder] = useState(founderImage);
@@ -42,7 +42,7 @@ const About = () => {
               alt="Creator"
               className="w-48 h-48 object-cover rounded-full mx-auto mb-4 shadow-lg hover:scale-105 transition-transform"
             />
-            <h3 className="text-xl font-semibold">JD</h3>
+            <h3 className="text-xl font-semibold">Vicky Panwar</h3>
             <p className="text-gray-600">Creator</p>
           </div>
         </div>

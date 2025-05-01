@@ -1,26 +1,27 @@
 import { Trek } from "../types/Trek";
-import Kedartal from "../assets/KedarTal.jpg";
-import Sattal from "../assets/SatTal.webp";
-import Brahmatal from "../assets/Brahmatal.png";
-import KedartalImage1 from "../assets/KedarTal-1.jpg";
-import KedartalImage2 from "../assets/KedarTal-2.webp";
-import KedartalImage3 from "../assets/KedarTal-3.jpg";
-import KedartalImage4 from "../assets/KedarTal-4.jpg";
-import SattalImage1 from "../assets/SatTal-1.jpg";
-import SattalImage2 from "../assets/SatTal-2.webp";
-import SattalImage3 from "../assets/SatTal-3.jpg";
-import SattalImage4 from "../assets/SatTal-4.jpeg";
-import BrahmatalImage1 from "../assets/brahmatal-1.jpg";
-import BrahmatalImage2 from "../assets/brahmatal-2.jpg";
-import BrahmatalImage3 from "../assets/brahmatal-3.jpg";
+import Kedartal from "../assets/KedartalTrek/KedarTal.jpg";
+import Sattal from "../assets/SattalTreak/SatTal.webp";
+import MtSrikanthBaseCamp from "../assets/Srikanth/Srikanth-Base-Camp.jpg";
+import KedartalImage1 from "../assets/KedartalTrek/KedarTal-1.jpg";
+import KedartalImage2 from "../assets/KedartalTrek/KedarTal-2.webp";
+import KedartalImage3 from "../assets/KedartalTrek/KedarTal-3.jpg";
+import KedartalImage4 from "../assets/KedartalTrek/KedarTal-4.jpg";
+import SattalImage1 from "../assets/SattalTreak/SatTal-1.jpg";
+import SattalImage2 from "../assets/SattalTreak/SatTal-2.webp";
+import SattalImage3 from "../assets/SattalTreak/SatTal-3.jpg";
+import SattalImage4 from "../assets/SattalTreak/SatTal-4.jpeg";
+import SrikanthImage1 from "../assets/Srikanth/Srikanth-1.jpg"
+import SrikanthImage2 from "../assets/Srikanth/Srikanth-2.jpg"
+import SrikanthImage3 from "../assets/Srikanth/Srikanth-3.jpg"
+import SrikanthImage4 from "../assets/Srikanth/Srikanth-4.jpg"
 // Import PDFs
-import KedarTalItinerary from "../assets/kedartal-itinerary.pdf";
-import SatTalItinarary from "../assets/Sattal-Itinerary.pdf";
-
+import KedarTalItinerary from "../assets/KedartalTrek/KedarTal-Itinerary.pdf";
+import SatTalItinarary from "../assets/SattalTreak/SatTal-Itinerary.pdf";
+import SrikanthBaseCampItinarary from "../assets/Srikanth/SrikanthBaseCamp-Itinarary.pdf";
 export const treks: Trek[] = [
   {
     id: "KEDARTAL",
-    name: "KEDARTAL TREK",
+    name: "Kedartal Trek",
     location: "Uttarakhand",
     difficulty: "Moderate",
     duration: "8 Days",
@@ -63,7 +64,7 @@ export const treks: Trek[] = [
   },
   {
     id: "SATTAL",
-    name: "SATTAL TREK",
+    name: "Sattal Trek",
     location: "Uttarakhand",
     difficulty: "Easy",
     duration: "3 Nights 4 Days",
@@ -99,28 +100,28 @@ export const treks: Trek[] = [
     itineraryPdf: SatTalItinarary,
   },
   {
-    id: "brahmatal",
-    name: "Brahmatal Trek",
+    id: "MT SRIKANTH BASE CAMP",
+    name: "Mt Srikanth Base Camp Trek",
     location: "Uttarakhand",
     difficulty: "Easy",
-    duration: "6 Days",
-    price: 7900,
-    image: Brahmatal,
-    season: "Winter",
-    description: "Snow trek with frozen lakes and stunning Himalayan views.",
+    duration: "5 Days",
+    price: 12500,
+    image: MtSrikanthBaseCamp,
+    season: "Winter/Summer",
+    description: "It is our constant endeavor to bring to adventure lovers new trails to explore. Mt Srikanth Base Camp trek is one such trail. It starts from the picturesque village of Dharali in Harsil Valley of Uttarkashi District, Uttarakhand, India. The maximum altitude reached is 4533m. It is a 13km trek that takes a trekker along beautiful forests of pine, cedar and alpine meadows. The trail is laden with various species of flowers along the way including the famous Brahma Kamal (white lotus).",
+
     itinerary: [
-      "Day 1: Drive to Lohajung",
-      "Day 2: Trek to Bekaltal",
-      "Day 3: Trek to Brahmatal via Jhandi Top",
-      "Day 4: Brahmatal summit and return to base",
-      "Day 5: Trek back to Lohajung",
-      "Day 6: Return journey"
+      "Day 1: Arrival at Harsil/Dharali",
+      "Day 2: 7km trek to Jhinda Bugyal",
+      "Day 3: :6km to Base Camp and back to camp site",
+      "Day 4: Back to Harsil / Dharali",
+      "Day 5: After breakfast, check out of the hotel."
     ],
     inclusions: [
-      "Stay and meals",
+      "2 Nights accommodation in Harsil/Dharali.",
       "Professional guide support",
       "Trek permits",
-      "Camp setup and sleeping gear"
+      "All meals during the trek."
     ],
     gearList: [
       "Woolen cap",
@@ -130,10 +131,362 @@ export const treks: Trek[] = [
       "Waterproof gloves"
     ],
     gallery: [
-      BrahmatalImage1,
-      BrahmatalImage2,
-      BrahmatalImage3
+      SrikanthImage1,
+      SrikanthImage2,
+      SrikanthImage3,
+      SrikanthImage4
     ],
-    itineraryPdf: "/pdfs/brahmatal-itinerary.pdf" // 🔥 added here
-  }
+    itineraryPdf: SrikanthBaseCampItinarary,
+  },
+  {
+    id: "TUNGANATH-CHANDRASHILA",
+    name: "Tunganath-Chandrashila Trek",
+    location: "Uttarakhand",
+    difficulty: "Hard",
+    duration: "3 Days",
+    price: 12500,
+    image: MtSrikanthBaseCamp,
+    season: "Winter/Summer",
+    description: "Tunganath is one of the 5 Kedars of Lord Shiva and is believed to be a 1000 years old.Perched at an altitude of 3680m above sea level, this is also the highest Shiva temple in the world.Legend has it that the Pandavas having slain their own kin in the great battle of Kurukshetra, were advised to ask forgiveness from Lord Shiva. however, Shiva was quite displeased with the Pandavas and in order to high from the Pandavas, disguised himself in the form of a bull and went into hiding underground at GuptKashi. But later, Lord Shiva appeared in the form of the bull’s body parts at 5 different places known as the Panch Kedars. Tunganath is the place where the hands had appeared. The Pandavas then built temples at each of these places to worship Shiva. The other 4 Kedars are the Kedarnath where his hump had appeared, Rudranath where his head had appeared, Madhyamaheshwar where his navel had appeared and Kapleshwar where the locks of his hair had appeared.",
+
+    itinerary: [
+      "Day 1: Arrival at Harsil/Dharali",
+      "Day 2: 7km trek to Jhinda Bugyal",
+      "Day 3: :6km to Base Camp and back to camp site",
+      "Day 4: Back to Harsil / Dharali",
+      "Day 5: After breakfast, check out of the hotel."
+    ],
+    inclusions: [
+      "2 Nights accommodation in Harsil/Dharali.",
+      "Professional guide support",
+      "Trek permits",
+      "All meals during the trek."
+    ],
+    gearList: [
+      "Woolen cap",
+      "Thermal innerwear",
+      "Snow gaiters (optional)",
+      "Trekking socks (2-3 pairs)",
+      "Waterproof gloves"
+    ],
+    gallery: [
+      SrikanthImage1,
+      SrikanthImage2,
+      SrikanthImage3,
+      SrikanthImage4
+    ],
+    itineraryPdf: SrikanthBaseCampItinarary,
+  },
+  {
+    id: "MT SRIKANTH BASE CAMP",
+    name: "Mt Srikanth Base Camp Trek",
+    location: "Uttarakhand",
+    difficulty: "Easy",
+    duration: "5 Days",
+    price: 12500,
+    image: MtSrikanthBaseCamp,
+    season: "Winter/Summer",
+    description: "It is our constant endeavor to bring to adventure lovers new trails to explore. Mt Srikanth Base Camp trek is one such trail. It starts from the picturesque village of Dharali in Harsil Valley of Uttarkashi District, Uttarakhand, India. The maximum altitude reached is 4533m. It is a 13km trek that takes a trekker along beautiful forests of pine, cedar and alpine meadows. The trail is laden with various species of flowers along the way including the famous Brahma Kamal (white lotus).",
+
+    itinerary: [
+      "Day 1: Transfers in a non-ac cab ex Rishikesh/Haridwar.",
+      "Day 2: Accommodation throughout the trip.",
+      "Day 3: Services of a guide.",
+      "Day 4: First aid kit with oxygen cylinder.",
+      "Day 5: Breakfast included on all days."
+    ],
+    inclusions: [
+      "2 Nights accommodation in Harsil/Dharali.",
+      "Professional guide support",
+      "Trek permits",
+      "All meals during the trek."
+    ],
+    gearList: [
+      "Woolen cap",
+      "Thermal innerwear",
+      "Snow gaiters (optional)",
+      "Trekking socks (2-3 pairs)",
+      "Waterproof gloves"
+    ],
+    gallery: [
+      SrikanthImage1,
+      SrikanthImage2,
+      SrikanthImage3,
+      SrikanthImage4
+    ],
+    itineraryPdf: SrikanthBaseCampItinarary,
+  },
+  {
+    id: "MT SRIKANTH BASE CAMP",
+    name: "Mt Srikanth Base Camp Trek",
+    location: "Uttarakhand",
+    difficulty: "Easy",
+    duration: "5 Days",
+    price: 12500,
+    image: MtSrikanthBaseCamp,
+    season: "Winter/Summer",
+    description: "It is our constant endeavor to bring to adventure lovers new trails to explore. Mt Srikanth Base Camp trek is one such trail. It starts from the picturesque village of Dharali in Harsil Valley of Uttarkashi District, Uttarakhand, India. The maximum altitude reached is 4533m. It is a 13km trek that takes a trekker along beautiful forests of pine, cedar and alpine meadows. The trail is laden with various species of flowers along the way including the famous Brahma Kamal (white lotus).",
+
+    itinerary: [
+      "Day 1: Arrival at Harsil/Dharali",
+      "Day 2: 7km trek to Jhinda Bugyal",
+      "Day 3: :6km to Base Camp and back to camp site",
+      "Day 4: Back to Harsil / Dharali",
+      "Day 5: After breakfast, check out of the hotel."
+    ],
+    inclusions: [
+      "2 Nights accommodation in Harsil/Dharali.",
+      "Professional guide support",
+      "Trek permits",
+      "All meals during the trek."
+    ],
+    gearList: [
+      "Woolen cap",
+      "Thermal innerwear",
+      "Snow gaiters (optional)",
+      "Trekking socks (2-3 pairs)",
+      "Waterproof gloves"
+    ],
+    gallery: [
+      SrikanthImage1,
+      SrikanthImage2,
+      SrikanthImage3,
+      SrikanthImage4
+    ],
+    itineraryPdf: SrikanthBaseCampItinarary,
+  },
+  {
+    id: "MT SRIKANTH BASE CAMP",
+    name: "Mt Srikanth Base Camp Trek",
+    location: "Uttarakhand",
+    difficulty: "Easy",
+    duration: "5 Days",
+    price: 12500,
+    image: MtSrikanthBaseCamp,
+    season: "Winter/Summer",
+    description: "It is our constant endeavor to bring to adventure lovers new trails to explore. Mt Srikanth Base Camp trek is one such trail. It starts from the picturesque village of Dharali in Harsil Valley of Uttarkashi District, Uttarakhand, India. The maximum altitude reached is 4533m. It is a 13km trek that takes a trekker along beautiful forests of pine, cedar and alpine meadows. The trail is laden with various species of flowers along the way including the famous Brahma Kamal (white lotus).",
+
+    itinerary: [
+      "Day 1: Arrival at Harsil/Dharali",
+      "Day 2: 7km trek to Jhinda Bugyal",
+      "Day 3: :6km to Base Camp and back to camp site",
+      "Day 4: Back to Harsil / Dharali",
+      "Day 5: After breakfast, check out of the hotel."
+    ],
+    inclusions: [
+      "2 Nights accommodation in Harsil/Dharali.",
+      "Professional guide support",
+      "Trek permits",
+      "All meals during the trek."
+    ],
+    gearList: [
+      "Woolen cap",
+      "Thermal innerwear",
+      "Snow gaiters (optional)",
+      "Trekking socks (2-3 pairs)",
+      "Waterproof gloves"
+    ],
+    gallery: [
+      SrikanthImage1,
+      SrikanthImage2,
+      SrikanthImage3,
+      SrikanthImage4
+    ],
+    itineraryPdf: SrikanthBaseCampItinarary,
+  },
+  {
+    id: "MT SRIKANTH BASE CAMP",
+    name: "Mt Srikanth Base Camp Trek",
+    location: "Uttarakhand",
+    difficulty: "Easy",
+    duration: "5 Days",
+    price: 12500,
+    image: MtSrikanthBaseCamp,
+    season: "Winter/Summer",
+    description: "It is our constant endeavor to bring to adventure lovers new trails to explore. Mt Srikanth Base Camp trek is one such trail. It starts from the picturesque village of Dharali in Harsil Valley of Uttarkashi District, Uttarakhand, India. The maximum altitude reached is 4533m. It is a 13km trek that takes a trekker along beautiful forests of pine, cedar and alpine meadows. The trail is laden with various species of flowers along the way including the famous Brahma Kamal (white lotus).",
+
+    itinerary: [
+      "Day 1: Arrival at Harsil/Dharali",
+      "Day 2: 7km trek to Jhinda Bugyal",
+      "Day 3: :6km to Base Camp and back to camp site",
+      "Day 4: Back to Harsil / Dharali",
+      "Day 5: After breakfast, check out of the hotel."
+    ],
+    inclusions: [
+      "2 Nights accommodation in Harsil/Dharali.",
+      "Professional guide support",
+      "Trek permits",
+      "All meals during the trek."
+    ],
+    gearList: [
+      "Woolen cap",
+      "Thermal innerwear",
+      "Snow gaiters (optional)",
+      "Trekking socks (2-3 pairs)",
+      "Waterproof gloves"
+    ],
+    gallery: [
+      SrikanthImage1,
+      SrikanthImage2,
+      SrikanthImage3,
+      SrikanthImage4
+    ],
+    itineraryPdf: SrikanthBaseCampItinarary,
+  },
+  {
+    id: "MT SRIKANTH BASE CAMP",
+    name: "Mt Srikanth Base Camp Trek",
+    location: "Uttarakhand",
+    difficulty: "Easy",
+    duration: "5 Days",
+    price: 12500,
+    image: MtSrikanthBaseCamp,
+    season: "Winter/Summer",
+    description: "It is our constant endeavor to bring to adventure lovers new trails to explore. Mt Srikanth Base Camp trek is one such trail. It starts from the picturesque village of Dharali in Harsil Valley of Uttarkashi District, Uttarakhand, India. The maximum altitude reached is 4533m. It is a 13km trek that takes a trekker along beautiful forests of pine, cedar and alpine meadows. The trail is laden with various species of flowers along the way including the famous Brahma Kamal (white lotus).",
+
+    itinerary: [
+      "Day 1: Arrival at Harsil/Dharali",
+      "Day 2: 7km trek to Jhinda Bugyal",
+      "Day 3: :6km to Base Camp and back to camp site",
+      "Day 4: Back to Harsil / Dharali",
+      "Day 5: After breakfast, check out of the hotel."
+    ],
+    inclusions: [
+      "2 Nights accommodation in Harsil/Dharali.",
+      "Professional guide support",
+      "Trek permits",
+      "All meals during the trek."
+    ],
+    gearList: [
+      "Woolen cap",
+      "Thermal innerwear",
+      "Snow gaiters (optional)",
+      "Trekking socks (2-3 pairs)",
+      "Waterproof gloves"
+    ],
+    gallery: [
+      SrikanthImage1,
+      SrikanthImage2,
+      SrikanthImage3,
+      SrikanthImage4
+    ],
+    itineraryPdf: SrikanthBaseCampItinarary,
+  },
+  {
+    id: "MT SRIKANTH BASE CAMP",
+    name: "Mt Srikanth Base Camp Trek",
+    location: "Uttarakhand",
+    difficulty: "Easy",
+    duration: "5 Days",
+    price: 12500,
+    image: MtSrikanthBaseCamp,
+    season: "Winter/Summer",
+    description: "It is our constant endeavor to bring to adventure lovers new trails to explore. Mt Srikanth Base Camp trek is one such trail. It starts from the picturesque village of Dharali in Harsil Valley of Uttarkashi District, Uttarakhand, India. The maximum altitude reached is 4533m. It is a 13km trek that takes a trekker along beautiful forests of pine, cedar and alpine meadows. The trail is laden with various species of flowers along the way including the famous Brahma Kamal (white lotus).",
+
+    itinerary: [
+      "Day 1: Arrival at Harsil/Dharali",
+      "Day 2: 7km trek to Jhinda Bugyal",
+      "Day 3: :6km to Base Camp and back to camp site",
+      "Day 4: Back to Harsil / Dharali",
+      "Day 5: After breakfast, check out of the hotel."
+    ],
+    inclusions: [
+      "2 Nights accommodation in Harsil/Dharali.",
+      "Professional guide support",
+      "Trek permits",
+      "All meals during the trek."
+    ],
+    gearList: [
+      "Woolen cap",
+      "Thermal innerwear",
+      "Snow gaiters (optional)",
+      "Trekking socks (2-3 pairs)",
+      "Waterproof gloves"
+    ],
+    gallery: [
+      SrikanthImage1,
+      SrikanthImage2,
+      SrikanthImage3,
+      SrikanthImage4
+    ],
+    itineraryPdf: SrikanthBaseCampItinarary,
+  },
+  {
+    id: "MT SRIKANTH BASE CAMP",
+    name: "Mt Srikanth Base Camp Trek",
+    location: "Uttarakhand",
+    difficulty: "Easy",
+    duration: "5 Days",
+    price: 12500,
+    image: MtSrikanthBaseCamp,
+    season: "Winter/Summer",
+    description: "It is our constant endeavor to bring to adventure lovers new trails to explore. Mt Srikanth Base Camp trek is one such trail. It starts from the picturesque village of Dharali in Harsil Valley of Uttarkashi District, Uttarakhand, India. The maximum altitude reached is 4533m. It is a 13km trek that takes a trekker along beautiful forests of pine, cedar and alpine meadows. The trail is laden with various species of flowers along the way including the famous Brahma Kamal (white lotus).",
+
+    itinerary: [
+      "Day 1: Arrival at Harsil/Dharali",
+      "Day 2: 7km trek to Jhinda Bugyal",
+      "Day 3: :6km to Base Camp and back to camp site",
+      "Day 4: Back to Harsil / Dharali",
+      "Day 5: After breakfast, check out of the hotel."
+    ],
+    inclusions: [
+      "2 Nights accommodation in Harsil/Dharali.",
+      "Professional guide support",
+      "Trek permits",
+      "All meals during the trek."
+    ],
+    gearList: [
+      "Woolen cap",
+      "Thermal innerwear",
+      "Snow gaiters (optional)",
+      "Trekking socks (2-3 pairs)",
+      "Waterproof gloves"
+    ],
+    gallery: [
+      SrikanthImage1,
+      SrikanthImage2,
+      SrikanthImage3,
+      SrikanthImage4
+    ],
+    itineraryPdf: SrikanthBaseCampItinarary,
+  },
+  {
+    id: "MT SRIKANTH BASE CAMP",
+    name: "Mt Srikanth Base Camp Trek",
+    location: "Uttarakhand",
+    difficulty: "Easy",
+    duration: "5 Days",
+    price: 12500,
+    image: MtSrikanthBaseCamp,
+    season: "Winter/Summer",
+    description: "It is our constant endeavor to bring to adventure lovers new trails to explore. Mt Srikanth Base Camp trek is one such trail. It starts from the picturesque village of Dharali in Harsil Valley of Uttarkashi District, Uttarakhand, India. The maximum altitude reached is 4533m. It is a 13km trek that takes a trekker along beautiful forests of pine, cedar and alpine meadows. The trail is laden with various species of flowers along the way including the famous Brahma Kamal (white lotus).",
+
+    itinerary: [
+      "Day 1: Arrival at Harsil/Dharali",
+      "Day 2: 7km trek to Jhinda Bugyal",
+      "Day 3: :6km to Base Camp and back to camp site",
+      "Day 4: Back to Harsil / Dharali",
+      "Day 5: After breakfast, check out of the hotel."
+    ],
+    inclusions: [
+      "2 Nights accommodation in Harsil/Dharali.",
+      "Professional guide support",
+      "Trek permits",
+      "All meals during the trek."
+    ],
+    gearList: [
+      "Woolen cap",
+      "Thermal innerwear",
+      "Snow gaiters (optional)",
+      "Trekking socks (2-3 pairs)",
+      "Waterproof gloves"
+    ],
+    gallery: [
+      SrikanthImage1,
+      SrikanthImage2,
+      SrikanthImage3,
+      SrikanthImage4
+    ],
+    itineraryPdf: SrikanthBaseCampItinarary,
+  },
 ];
