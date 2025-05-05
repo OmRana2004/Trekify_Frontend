@@ -2,6 +2,7 @@ import { Trek } from "../types/Trek";
 import Kedartal from "../assets/KedartalTrek/KedarTal.jpg";
 import Sattal from "../assets/SattalTreak/SatTal.webp";
 import MtSrikanthBaseCamp from "../assets/Srikanth/Srikanth-Base-Camp.jpg";
+import TunganathChandrashila from "../assets/TunganathChandrashilaTrek/TunganathChandrashila.webp";
 import KedartalImage1 from "../assets/KedartalTrek/KedarTal-1.jpg";
 import KedartalImage2 from "../assets/KedartalTrek/KedarTal-2.webp";
 import KedartalImage3 from "../assets/KedartalTrek/KedarTal-3.jpg";
@@ -14,6 +15,10 @@ import SrikanthImage1 from "../assets/Srikanth/Srikanth-1.jpg"
 import SrikanthImage2 from "../assets/Srikanth/Srikanth-2.jpg"
 import SrikanthImage3 from "../assets/Srikanth/Srikanth-3.jpg"
 import SrikanthImage4 from "../assets/Srikanth/Srikanth-4.jpg"
+import TunganathImage1 from "../assets/TunganathChandrashilaTrek/tungnath-1.webp";
+import TunganathImage2 from "../assets/TunganathChandrashilaTrek/tungnath-2.webp";
+import TunganathImage3 from "../assets/TunganathChandrashilaTrek/tungnath-3.jpeg";
+import TunganathImage4 from "../assets/TunganathChandrashilaTrek/tungnath-4.jpeg";
 // Import PDFs
 import KedarTalItinerary from "../assets/KedartalTrek/KedarTal-Itinerary.pdf";
 import SatTalItinarary from "../assets/SattalTreak/SatTal-Itinerary.pdf";
@@ -145,7 +150,7 @@ export const treks: Trek[] = [
     difficulty: "Hard",
     duration: "3 Days",
     price: 12500,
-    image: MtSrikanthBaseCamp,
+    image: TunganathChandrashila,
     season: "Winter/Summer",
     description: "Tunganath is one of the 5 Kedars of Lord Shiva and is believed to be a 1000 years old.Perched at an altitude of 3680m above sea level, this is also the highest Shiva temple in the world.Legend has it that the Pandavas having slain their own kin in the great battle of Kurukshetra, were advised to ask forgiveness from Lord Shiva. however, Shiva was quite displeased with the Pandavas and in order to high from the Pandavas, disguised himself in the form of a bull and went into hiding underground at GuptKashi. But later, Lord Shiva appeared in the form of the bull’s body parts at 5 different places known as the Panch Kedars. Tunganath is the place where the hands had appeared. The Pandavas then built temples at each of these places to worship Shiva. The other 4 Kedars are the Kedarnath where his hump had appeared, Rudranath where his head had appeared, Madhyamaheshwar where his navel had appeared and Kapleshwar where the locks of his hair had appeared.",
 
@@ -170,10 +175,10 @@ export const treks: Trek[] = [
       "Waterproof gloves"
     ],
     gallery: [
-      SrikanthImage1,
-      SrikanthImage2,
-      SrikanthImage3,
-      SrikanthImage4
+      TunganathImage1,
+      TunganathImage2,
+      TunganathImage3,
+      TunganathImage4
     ],
     itineraryPdf: SrikanthBaseCampItinarary,
   },
