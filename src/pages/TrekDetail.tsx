@@ -17,6 +17,14 @@ const TrekDetail = () => {
     );
   }
 
+  const similarTreks = treks
+    .filter(
+      (t) =>
+        t.id !== trek.id &&
+        t.location === trek.location // You can change this logic
+    )
+    .slice(0, 3); // Limit to 3 similar treks
+
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
       {/* Trek Banner */}
@@ -54,7 +62,7 @@ const TrekDetail = () => {
       </div>
 
       {/* Itinerary */}
-      {trek.itinerary?.length ? (
+      {trek.itinerary?.length && (
         <div className="mt-12">
           <h2 data-aos="fade-up" className="text-3xl font-extrabold text-gray-900 mb-4">Itinerary</h2>
           <ul className="list-disc list-inside space-y-2">
@@ -70,10 +78,10 @@ const TrekDetail = () => {
             ))}
           </ul>
         </div>
-      ) : null}
+      )}
 
       {/* Inclusions */}
-      {trek.inclusions?.length ? (
+      {trek.inclusions?.length && (
         <div className="mt-12">
           <h2 data-aos="fade-up" className="text-3xl font-extrabold text-gray-900 mb-4">Inclusions</h2>
           <ul className="list-disc list-inside space-y-2">
@@ -89,10 +97,10 @@ const TrekDetail = () => {
             ))}
           </ul>
         </div>
-      ) : null}
+      )}
 
       {/* Gear List */}
-      {trek.gearList?.length ? (
+      {trek.gearList?.length && (
         <div className="mt-12">
           <h2 data-aos="fade-up" className="text-3xl font-extrabold text-gray-900 mb-4">Gear List</h2>
           <ul className="list-disc list-inside space-y-2">
@@ -108,10 +116,10 @@ const TrekDetail = () => {
             ))}
           </ul>
         </div>
-      ) : null}
+      )}
 
       {/* Gallery */}
-      {trek.gallery?.length ? (
+      {trek.gallery?.length && (
         <div className="mt-12">
           <h2 data-aos="fade-up" className="text-3xl font-extrabold text-gray-900 mb-6">Gallery</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
@@ -126,38 +134,74 @@ const TrekDetail = () => {
             ))}
           </div>
         </div>
-      ) : null}
+      )}
 
-{/* Desktop Book Now Button */}
-<div className="justify-center mt-8 md:flex hidden">
-  <button
-    onClick={() => setIsBookingOpen(true)}
-    className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-lg font-bold rounded-full shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300"
-  >
-    🚀 Book This Trek
-  </button>
-</div>
+      {/* Book Now Buttons */}
+      <div className="justify-center mt-8 md:flex hidden">
+        <button
+          onClick={() => setIsBookingOpen(true)}
+          className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-lg font-bold rounded-full shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300"
+        >
+          🚀 Book This Trek
+        </button>
+      </div>
 
-{/* Mobile Floating Book Button */}
-<div
-  data-aos="fade-up"
-  className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 md:hidden"
->
-  <button
-    onClick={() => setIsBookingOpen(true)}
-    className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-lg font-bold rounded-full shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300"
-  >
-     🎒Book This Trek
-  </button>
-</div>
+      <div
+        data-aos="fade-up"
+        className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 md:hidden"
+      >
+        <button
+          onClick={() => setIsBookingOpen(true)}
+          className="px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white text-lg font-bold rounded-full shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300"
+        >
+          🎒 Book This Trek
+        </button>
+      </div>
 
-
-      {/* Modal */}
+      {/* Booking Modal */}
       {isBookingOpen && (
         <BookingModal
           onClose={() => setIsBookingOpen(false)}
           trekName={trek.name}
         />
+      )}
+
+      {/* Similar Treks */}
+      {similarTreks.length > 0 && (
+        <div className="mt-20">
+          <h2 data-aos="fade-up" className="text-3xl font-extrabold text-gray-900 mb-6">
+            Similar Treks
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {similarTreks.map((similarTrek, index) => (
+              <div
+                key={similarTrek.id}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              >
+                <img
+                  src={similarTrek.image}
+                  alt={similarTrek.name}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4">
+                  <h3 className="text-xl font-bold text-gray-800">{similarTrek.name}</h3>
+                  <p className="text-gray-600 mt-1">
+                    {similarTrek.location} • {similarTrek.difficulty} • {similarTrek.duration}
+                  </p>
+                  <p className="text-green-600 font-semibold mt-2">₹{similarTrek.price}</p>
+                  <a
+                    href={`/treks/${similarTrek.id}`}
+                    className="inline-block mt-4 text-green-600 font-semibold hover:underline"
+                  >
+                    View Details →
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       )}
     </div>
   );

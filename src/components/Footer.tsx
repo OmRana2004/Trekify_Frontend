@@ -40,19 +40,19 @@ const Footer = () => {
           <h3 className="text-xl font-semibold text-white mb-4">Contact Info</h3>
           <ul className="text-gray-400 space-y-2">
             <li>📍 Dharali, Uttarakhand, India</li>
-            <li>📞 +91-1234567890</li>
+            <li>📞 +917668762035</li>
             <li>✉️ info@trekify.com</li>
           </ul>
 
           {/* Social Icons */}
           <div className="flex space-x-4 mt-6">
-            <a href="#" className="hover:text-green-400 transition-all duration-300">
+            <a href="https://www.facebook.com/khurana.panwar" target="blank" className="hover:text-green-400 transition-all duration-300">
               <FaFacebookF size={20} />
             </a>
-            <a href="#" className="hover:text-green-400 transition-all duration-300">
+            <a href="https://www.instagram.com/keshav_panwar92/" target="_blank" className="hover:text-green-400 transition-all duration-300">
               <FaInstagram size={20} />
             </a>
-            <a href="#" className="hover:text-green-400 transition-all duration-300">
+            <a href="https://www.youtube.com/@SOHUMHIMALAYA" target="blank" className="hover:text-green-400 transition-all duration-300">
               <FaYoutube size={20} />
             </a>
           </div>

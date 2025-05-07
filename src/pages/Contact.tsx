@@ -20,10 +20,10 @@ const Contact = () => {
                   Uttarakhand
                 </li>
                 <li>
-                  📞 <strong>Phone:</strong> +977 01 4378381
+                  📞 <strong>Phone:</strong> +917668762035
                 </li>
                 <li>
-                  📱 <strong>WhatsApp:</strong> +977 9818615420 (Subal Lopchan)
+                  📱 <strong>WhatsApp: </strong>7668762035 (Keshav Singh Panwar)
                 </li>
                 <li>
                   ✉️ <strong>Email:</strong> info@Trekify.com
