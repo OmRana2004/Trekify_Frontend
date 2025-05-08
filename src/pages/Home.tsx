@@ -22,13 +22,14 @@ import {
   Compass,
   Briefcase,
   PhoneCall,
-  Quote
+  Quote,
 } from "lucide-react";
 
 const Home = () => {
   const [search, setSearch] = useState("");
   const [difficulty, setDifficulty] = useState("All");
   const [showAll, setShowAll] = useState(false);
+  const [showMore, setShowMore] = useState(false); // For show more / show less functionality
 
   const filteredTreks = treks.filter((trek) => {
     const matchesSearch =
@@ -42,6 +43,8 @@ const Home = () => {
   });
 
   const treksToShow = showAll ? filteredTreks : filteredTreks.slice(0, 6);
+
+  const toggleDescription = () => setShowMore((prev) => !prev);
 
   return (
     <div>
@@ -73,22 +76,57 @@ const Home = () => {
 
       {/* Welcome to Trekify Section */}
       <section className="bg-white py-16 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Welcome to Trekify!</h2>
-          <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-            At Trekify, we don’t just organize treks — we create life-changing experiences. Our treks are carefully curated to take you deep into the heart of the Himalayas, where you can disconnect from the noise and reconnect with yourself. Whether you're a first-timer or a seasoned hiker, we ensure you enjoy nature with safety, purpose, and joy.
-          </p>
-          <img
-            src={aboutImage}
-            alt="Trekify Experience"
-            className="w-full max-w-4xl mx-auto rounded-xl shadow-lg mb-8 object-cover"
-          />
-          <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4">
-            How Trekking with Trekify is Different and Motivated
-          </h3>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            Trekify is driven by passion, purpose, and a deep love for the Himalayas. With certified local guides, eco-friendly practices, and soul-nourishing experiences, we’re not just another trekking company — we’re your adventure family. Each step with us is safe, meaningful, and filled with discovery.
-          </p>
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            {/* Text Content */}
+            <div className="md:w-1/2">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 font-serif">
+                Welcome to Trekify!
+              </h2>
+              <p className="text-base md:text-lg text-gray-700 mb-8 leading-relaxed font-sans">
+                At Trekify, we don’t just organize treks — we create life-changing experiences.
+                Our treks are carefully curated to take you deep into the heart of the Himalayas,
+                where you can disconnect from the noise and reconnect with yourself. Whether you're
+                a first-timer or a seasoned hiker, we ensure you enjoy nature with safety, purpose, and joy.
+              </p>
+
+              <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-4 font-serif">
+                How Trekking with Trekify is Different and Motivated
+              </h3>
+              <p className="text-base md:text-lg text-gray-700 leading-relaxed font-sans">
+                Trekify is driven by passion, purpose, and a deep love for the Himalayas. With certified
+                local guides, eco-friendly practices, and soul-nourishing experiences, we’re not just another
+                trekking company — we’re your adventure family. Each step with us is safe, meaningful, and
+                filled with discovery.
+              </p>
+
+              {/* Show More / Show Less */}
+              <p
+                className={`text-base md:text-lg text-gray-700 leading-relaxed font-sans ${
+                  showMore ? "" : "line-clamp-3"
+                }`}
+              >
+                {showMore
+                  ? `Trekify goes beyond just trekking, we offer holistic experiences. Our guided treks let you explore
+                       breathtaking views, encounter wildlife, and forge lasting memories. Whether you're looking for peace,
+                       adventure, or both, Trekify ensures an enriching journey with top-notch services, sustainable practices,
+                       and personalized attention. Let us take you on a trek you’ll never forget.`
+                  : `Trekify goes beyond just trekking, we offer holistic experiences. Our guided treks let you explore...`}
+              </p>
+              <button onClick={toggleDescription} className="text-green-600 mt-2 hover:underline">
+                {showMore ? "Show Less" : "Show More"}
+              </button>
+            </div>
+
+            {/* Image */}
+            <div className="md:w-1/2">
+              <img
+                src={aboutImage} // Replace with your image source
+                alt="Trekify Experience"
+                className="w-full rounded-xl shadow-lg object-cover"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

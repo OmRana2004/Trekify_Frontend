@@ -15,5 +15,8 @@ export interface Trek {
   gearList?: string[];
   gallery?: string[];
   itineraryPdf?: string;
+  [key: string]: any;
+  // Define or import the Testimonial type
+    testimonials?: { name: string; feedback: string; rating?: number }[];
 
 }
