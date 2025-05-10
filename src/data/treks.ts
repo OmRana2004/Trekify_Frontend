@@ -19,10 +19,18 @@ import TunganathImage1 from "../assets/TunganathChandrashilaTrek/tungnath-1.webp
 import TunganathImage2 from "../assets/TunganathChandrashilaTrek/tungnath-2.webp";
 import TunganathImage3 from "../assets/TunganathChandrashilaTrek/tungnath-3.jpeg";
 import TunganathImage4 from "../assets/TunganathChandrashilaTrek/tungnath-4.jpeg";
+import GaumukhTapovan from "../assets/GaumukhTapovan/GaumukhTapovan.jpg";
+import GaumukhTapovanImage1 from "../assets/GaumukhTapovan/GaumukhTapovan-1.webp";
+import GaumukhTapovanImage2 from "../assets/GaumukhTapovan/GaumukhTapovan-2.webp";   
+import GaumukhTapovanImage3 from "../assets/GaumukhTapovan/GaumukhTapovan-3.webp";
+import GaumukhTapovanImage4 from "../assets/GaumukhTapovan/GaumukhTapovan-4.webp";
 // Import PDFs
 import KedarTalItinerary from "../assets/KedartalTrek/KedarTal-Itinerary.pdf";
 import SatTalItinarary from "../assets/SattalTreak/SatTal-Itinerary.pdf";
 import SrikanthBaseCampItinarary from "../assets/Srikanth/SrikanthBaseCamp-Itinarary.pdf";
+import TunganathChandrashilaItinerary from "../assets/TunganathChandrashilaTrek/TunganathChandrashila-Itinerary.pdf"; 
+import GaumukhTapovanItinerary from "../assets/GaumukhTapovan/GaumukhTapovan-Itinerary.pdf";
+
 export const treks: Trek[] = [
   {
     id: "KEDARTAL",
@@ -180,28 +188,30 @@ export const treks: Trek[] = [
       TunganathImage3,
       TunganathImage4
     ],
-    itineraryPdf: SrikanthBaseCampItinarary,
+    itineraryPdf: TunganathChandrashilaItinerary,
   },
   {
-    id: "MT SRIKANTH BASE CAMP",
-    name: "Mt Srikanth Base Camp Trek",
+    id: "GAUMUKH TAPOVAN",
+    name: "Gaumukh Tapovan Trek",
     location: "Uttarakhand",
     difficulty: "Easy",
-    duration: "5 Days",
-    price: 12500,
-    image: MtSrikanthBaseCamp,
+    duration: "6 Days",
+    price: 17500,
+    image: GaumukhTapovan,
     season: "Winter/Summer",
-    description: "It is our constant endeavor to bring to adventure lovers new trails to explore. Mt Srikanth Base Camp trek is one such trail. It starts from the picturesque village of Dharali in Harsil Valley of Uttarkashi District, Uttarakhand, India. The maximum altitude reached is 4533m. It is a 13km trek that takes a trekker along beautiful forests of pine, cedar and alpine meadows. The trail is laden with various species of flowers along the way including the famous Brahma Kamal (white lotus).",
+    description: " The Gaumukh Tapovan Trek is one of the best-selling treks in Gangotri, Uttarakhand, and a true paradise for both spiritual seekers and adventure lovers. Every year, countless trekkers embark on this sacred journey to experience the breathtaking beauty and powerful spiritual energy of the region. Alpine Hikers is proud to offer a memorable and enriching experience on this iconic trail. Gaumukh, the source of the holy River Ganga, holds deep religious significance, as the Ganga is considered the most revered river in India. Just a few kilometers ahead lies Tapovan, a serene alpine meadow known for its tranquil atmosphere and spiritual vibrance. This sacred land is home to meditating sages and serves as the base camp of Mt. Shivling (6,543 m) — a peak held in high reverence by the locals. The entire trail is charged with spiritual vibrations, drawing many trekkers back time and again to reconnect with the divinity and serenity of the Himalayas. The Legend of Gaumukh & the Descent of Ganga According to Hindu mythology, the story of Ganga’s descent begins with King Sagar, who wished to perform the Ashwamedha Yagna to proclaim his dominance over the three worlds. Threatened by this, Lord Indra abducted the ceremonial horse and tied it near the ashram of Sage Kapila. Deep in meditation, the sage was unaware of this incident. When King Sagar’s sons discovered the horse, they mistook Sage Kapila for the thief and insulted him. In his anger, the sage burned them to ashes. King Sagar, devastated by the loss of his sons, prayed to Lord Brahma for a solution. Brahma advised him to bring Ganga down from the heavens to purify the ashes of his sons. However, Ganga was furious at the thought of descending to Earth, as she feared her force would destroy it. To appease her, Lord Shiva agreed to catch her in his matted locks and release her gently. Thus, Ganga descended to Earth, and the place where she first touched the ground is known as Gaumukh. The trek to Gaumukh Tapovan is not just a physical journey but also a spiritual pilgrimage, allowing trekkers to connect with the divine energy of the Himalayas and experience the beauty of nature in its purest form.",
+    
 
     itinerary: [
-      "Day 1: Transfers in a non-ac cab ex Rishikesh/Haridwar.",
-      "Day 2: Accommodation throughout the trip.",
-      "Day 3: Services of a guide.",
-      "Day 4: First aid kit with oxygen cylinder.",
-      "Day 5: Breakfast included on all days."
+      "Day 1: ARRIVAL AT GANGOTRI (3000M)",
+      "Day 2: ACCLIMATIZATION DAY AT GANGOTRI",
+      "Day 3: GANGOTRI TO BHOJBASA (3600M))",
+      "Day 4: BHOJBASA TO TAPOVAN(4400M)",
+      "Day 5: TAPOVAN TO CHIRBASA(3000M)",
+      "Day 6: CHIRBASA TO GANGOTRI(3000M)",
     ],
     inclusions: [
-      "2 Nights accommodation in Harsil/Dharali.",
+      "Sleeping tents, mattresses, sleeping bags, kitchen tent, dining tent, toilet tent.",
       "Professional guide support",
       "Trek permits",
       "All meals during the trek."
@@ -214,12 +224,12 @@ export const treks: Trek[] = [
       "Waterproof gloves"
     ],
     gallery: [
-      SrikanthImage1,
-      SrikanthImage2,
-      SrikanthImage3,
-      SrikanthImage4
+      GaumukhTapovanImage1,
+      GaumukhTapovanImage2,
+      GaumukhTapovanImage3,
+      GaumukhTapovanImage4
     ],
-    itineraryPdf: SrikanthBaseCampItinarary,
+    itineraryPdf: GaumukhTapovanItinerary,
   },
   {
     id: "MT SRIKANTH BASE CAMP",
